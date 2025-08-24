@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.picture-container {
+  width: 250px;
+  height: 250px;
+}
+
+.drawer {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.information {
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+  width: 330px;
+  font-weight: 550;
+}
+
+.description {
+  color: gray;
+  width: 330px;
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 330px;
+}
+
+.avatar {
+  width: 40px;
+  border-radius: 50px;
+}
+
+.user-name {
+  margin-right: 150px;
+  font-size: 11px;
+}
+
+.date {
+  color: gray;
+}
+
+.share-section {
+  position: relative;
+  display: inline-block;
+}
+
+.share-button {
+  border: none;
+  padding: 7px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.links {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s;
+  display: flex;
+  position: absolute;
+  background-color: hsl(217, 19%, 35%);
+  padding: 10px 20px;
+  gap: 10px;
+  color: hsl(212, 23%, 69%);
+  align-items: center;
+  border-radius: 5px;
+  top: -60px;
+  left: 16px;
+  transform: translateX(-50%);
+}
+
+.links.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s;
+}
+
+.links::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid hsl(217, 19%, 35%);
+}
+
+.links p {
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.share-button:hover {
+  background-color: hsl(212, 23%, 69%);
+}
+
+.share-button.show {
+  background-color: hsl(212, 23%, 69%);
+}
